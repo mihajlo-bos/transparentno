@@ -98,6 +98,7 @@ a.rpanel:hover {
     height: 80px;
     position: fixed;
     margin-top: 5px;
+    z-index: 100;
 }
 
 #nav {
@@ -292,14 +293,20 @@ ul.built {
 }
 
 #slide5 {
-    background: url(../img/slide5.jpg) 50% 0 no-repeat fixed;
+    background: url(../img/mockup-2.jpg) 50% 0 no-repeat fixed;
     margin: 0 auto;
     padding: 250px 0;
     background-size: cover;
 }
 
 #slide7 {
-    background: url(../img/slika1.jpg) 50% 0 no-repeat fixed;
+    background: url(../img/budzet1.jpg) 50% 0 no-repeat fixed;
+    margin: 0 auto;
+    padding: 250px 0;
+    background-size: cover;
+}
+#slide7a {
+    background: url(../img/budzet2.jpg) 50% 0 no-repeat fixed;
     margin: 0 auto;
     padding: 250px 0;
     background-size: cover;
@@ -313,7 +320,13 @@ ul.built {
 }
 
 #slide11 {
-    background: url(../img/slika3.jpg) 50% 0 no-repeat fixed;
+    background: url(../img/korupcija-2.jpg) 50% 0 no-repeat fixed;
+    margin: 0 auto;
+    padding: 250px 0;
+    background-size: cover;
+}
+#slide11a {
+    background: url(../img/korupcija-1.jpg) 50% 0 no-repeat fixed;
     margin: 0 auto;
     padding: 250px 0;
     background-size: cover;
@@ -334,13 +347,13 @@ ul.built {
 }
 
 #slide17 {
-    background: url(../img/korupcija-2.jpg) 50% 0 no-repeat fixed;
+    background: url(../img/slika1.jpg) 50% 0 no-repeat fixed;
     margin: 0 auto;
     background-size: cover;
 }
 
 #slide18 {
-    background: url(../img/korupcija-1.jpg) 50% 0 no-repeat fixed;
+    background: url(../img/slika2.jpg) 50% 0 no-repeat fixed;
     margin: 0 auto;
     background-size: cover;
 }
