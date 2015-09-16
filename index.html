@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Creating a Simple Parallax Scrolling Website</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Wellfleet' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Wellfleet' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911' rel='stylesheet' type='text/css'>
+    <script>
+    $(document).ready(function() { 
+        $('a[href*=#]').each(function() {  
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')   && location.hostname == this.hostname   && this.hash.replace(/#/, '')) {   
+                var $targetId = $(this.hash),
+                    $targetAnchor = $('[name=' + this.hash.slice(1) + ']');   
+                var $target = $targetId.length ? $targetId : $targetAnchor.length ? $targetAnchor : false;    
+                if ($target) {     
+                    var targetOffset = $target.offset().top;
+
+
+                         
+                    $(this).click(function() {
+                        $("#nav li a").removeClass("active");
+                        $(this).addClass('active');      
+                        $('html, body').animate({
+                            scrollTop: targetOffset
+                        }, 1000);      
+                        return false;     
+                    });   
+                }  
+            } 
+        });
+
+    });
+    </script>
+</head>
+
+<body>
+    <div id="demo_back">
+        <a href="#" class="lpanel">
+            << BACK TO THE 1STWEBDESIGN ARTICLE </a>
+                <a href="#" class="rpanel"> NEXT DEMO >> </a>
+    </div>
+    <header id="header">
+        <div class="content">
+            <div id="logo"><a href=""> PARALLAX </a></div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#slide1" class="active" title="Next Section">Slide 1</a></li>
+                    <li><a href="#slide2" title="Next Section">Slide 2</a></li>
+                    <li><a href="#slide3" title="Next Section">Slide 3</a></li>
+                    <li><a href="#slide4" title="Next Section">Slide 4</a></li>
+                    <li><a href="#slide5" title="Next Section">Slide 5</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div id="slide1" class="slide">
+        <div class="content">
+            pocetni slajd
+            <div id="christmas_tree"> </div>
+            <div id="snowflakes1"></div>
+            <div id="snowflakes2"></div>
+            <h2>MERRY</h2>
+            <h1>CHRISTMAS</h1>
+            <div id="divider"> </div>
+            <h3>HAPPY NEW YEAR </h3>
+            <div id="ribbon"></div>
+            <div id="new_year"> </div>
+        </div>
+    </div>
+    <div id="slide2" class="slide">
+        <div class="content">
+            <div class="quotes_container">
+                <h3 class="quotes">Pravo i interes javnosti da zna uređeni su Zakonom o slobodnom pristupu informacijama od javnog značaja. Ovaj zakon nudi definiciju informacije od javnog značaja. </h3>
+                <!-- <img src="img/dr-seuss.png" align="left" />
+               <h4 class="author_name_gray">Dr. Seuss </h4>  -->
+            </div>
+        </div>
+    </div>
+    <div id="slide3" class="slide">
+        <div class="content">
+            <div class="quotes_container">
+                slika osvetljenog zakona
+            </div>
+        </div>
+    </div>
+    <div id="slide4" class="slide">
+        <div class="content">
+            <div class="quotes_container">
+                <h3 class="quotes">Zakon predviđa da svaki organ javne vlasti najređe jednom godišnje objavljuje, odnosno ažurira Informator o radu. </h3>
+            </div>
+        </div>
+    </div>
+    <div id="slide5" class="slide">
+        <div class="content">
+            Informator o radu je dokument koji sadrži osnovne podatke o radu organa javne vlasti, opis pravila u vezi sa javnošću rada, spisak najčešće traženih informacija od javnog značaja, opis nadležnosti, ovlašćenja i obaveza, usluge koje organ pruža zainteresovanim licima, podatke o prihodima i rashodima, podatke o javnim nabavkama, informacije o podnošenju zahteva za pristup informacijama. Ukoliko se informator redovno ažurira i ukoliko je on lako dostupan na veb prezentaciji državnog organa, podiže se transparentnost rada jedinice lokalne samouprave, a građanima se omogućava brz i jednostavan pristup potrebnoj
+        </div>
+    </div>
+    <div id="slide6" class="slide">
+        <div class="content">
+            <div class="quotes_container">
+                <h3 class="quotes">Detaljna analiza Informatora o radu svih opština u Srbiji, pokazala je da samo jedna opština održava svoj informator u celosti se pridržavajući uputstva. Ostalim informatorima nedostaju određeni delovi i to veoma često informacije o budžetu. U više od 54% opština  građanima nisu dostupne informacije o budžetu.  </h3>
+            </div>
+        </div>
+    </div>
+    <div id="slide7" class="slide">
+        <div class="content">
+            Slika vreće i iza nje mapa s informacijama o budžetu.
+        </div>
+    </div>
+    <div id="slide8" class="slide">
+        <div class="content">
+            <div class="quotes_container">
+                <h3 class="quotes">
+            Još češće nedostaju informacije o javnim nabavkama koje objavljuje tek svaka četvrta opština. Osim njih, često nedostaju i podaci o pruženoj državnoj pomoći, odnosno raznim vidovima finansijske podrške javnim i ostalim preduzećima. Ove informacije su dostupne u oko 30% slučajeva.
+            </h3>
+            </div>
+        </div>
+    </div>
+    <div id="slide9" class="slide">
+        <div class="content">
+            Slika police i iza nje mapa s ukrštenim podacima (javne nabavke, državna pomoć).
+        </div>
+    </div>
+    <div id="slide10" class="slide">
+        <div class="content">
+            <div class="quotes_container">
+                <h3 class="quotes">
+            Osim toga što nedostatak ovih informacija navodi na možda pogrešan zaključak o umešanosti u korupciju ili o zloupotrebi položaja, on ukazuje na još nešto. Neobjavljivanjem informacija o javnim nabavkama organi vlasti krše ne samo Zakon o slobodnom pristupu informacija od javnog značaja već i Zakon o javnim nabavkama.
+             </h3>
+            </div>
+        </div>
+    </div>
+    <div id="slide11" class="slide">
+        <div class="content">
+            <p>Slika „korupcija“</p>
+        </div>
+    </div>
+    <div id="slide12" class="slide">
+        <div class="content">
+            <div class="quotes_container">
+                <h3 class="quotes">
+	           Informator treba da sadrži i informacije o uslugama koje organ pruža zainteresovanim licima, kao i o postupku za pružanje te usluge. 
+	           <br>
+	           <br>
+				Više od polovine informatora o radu opština u Srbiji nema podatke o, na primer, potrebnim dokumentima i uslovima za sticanje nekog socijalnog prava, ili o izdavanju uverenja o upisu u matičnu knjigu rođenih. Zato uvek može da „fali jedan papir“ .
+			  </h3>
+            </div>
+        </div>
+    </div>
+    <div id="slide13" class="slide">
+        <div class="content">
+            <p>Slika šaltera i iza nje mapa s ukrštenim podacima o uslugama. Modular! (nadovezati idealne usluge.</p>
+        </div>
+    </div>
+    <div id="slide14" class="slide">
+        <div class="content">
+            <div class="quotes_container">
+                <h3 class="quotes">
+            Osim analize informatora istraživanje je obuhvatilo i pregled dostupnosti drugih dokumenata među kojima su: statut opštine, urbanistički plan kao i druge strateške planove (Lokalna strategija održivog razvoja, Lokalna strategija ekonomskog razvoja, Lokalni akcioni plan za mlade, …) Pregled rezultata tog istraživanja, kao i pristup prikupljenim dokumentima omogućeni su putem Baze lokalne transparentnosti. 
+              </h3>
+            </div>
+        </div>
+    </div>
+    <div id="slide15" class="slide">
+        <div class="content">
+            <p>Ili slika maskote ili slika na kojoj je lupa a ispod nje naš ajsberg logo, ili čak i slika stubaca. Iza te slike je pristup stupcima. </p>
+        </div>
+    </div>
+    <div id="slide16" class="slide">
+        <div class="content">
+            
+            Lorem ipsum o podnošenju zahteva…. (na primer) Kao oblik reaktivne transparentnosti, ustanovljen je postupak podnošenja Zahteva za pristup informacijama. Zahtev za pristup informacijama od javnog značaja je format za pristup informacijama od javnog značaja na zahtev građana ili drugih organa. Postupak u vezi sa podnošenjem i realizacijom Zahteva za ostvarivanje prava na slobodan pristup informacijama od javnog značaja definisan je članovima 15 - 21 Zakona o slobodnom pristupu informacijama od javnog značaja. Četvrtina informatora ne sadrži potpunu informaciju o tome kako se podnosi zahtev za pristup informacijama od javnog značaja, što onemogućava lako dolaženje do informacije. Ako uzmem u obzir da velika većina tih informatora nema dostupne npr. planove javnih nabavki, to onda znači da se do tih informacija jako teško dolazi.
+             
+        </div>
+    </div>
+	
+	 <div id="slide17" class="slide">
+        <div class="content">
+           Još uvek nedefinisana slika koja bi ilustrovala stranicu o zahtevima. Ili samo dugme, podnesite zahtev koji vodi na pomenutu stranu (koja je opisana u nekom od ranijih dokumenata)
+        </div>
+    </div>
+
+     <div id="slide18" class="slide">
+        <div class="content">
+           
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
