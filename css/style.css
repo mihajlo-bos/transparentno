@@ -313,7 +313,14 @@ ul.built {
 }
 
 #slide9 {
-    background: url(../img/slika2.jpg) 50% 0 no-repeat fixed;
+    background: url(../img/javne-nabavke-1.jpg) 50% 0 no-repeat fixed;
+    margin: 0 auto;
+    padding: 250px 0;
+    background-size: cover;
+}
+
+#slide9a {
+    background: url(../img/javne-nabavke-2.jpg) 50% 0 no-repeat fixed;
     margin: 0 auto;
     padding: 250px 0;
     background-size: cover;
@@ -333,30 +340,34 @@ ul.built {
 }
 
 #slide13 {
-    background: url(../img/slika4.jpg) 50% 0 no-repeat fixed;
+    background: url(../img/salter-2.jpg) 50% 0 no-repeat fixed;
     margin: 0 auto;
     padding: 250px 0;
     background-size: cover;
 }
 
+#slide13a {
+    background: url(../img/salter-1.jpg) 50% 0 no-repeat fixed;
+    margin: 0 auto;
+    padding: 250px 0;
+    background-size: cover;
+}
+
+
 #slide15 {
-    background: url(../img/slika5.jpg) 50% 0 no-repeat fixed;
+    background: url(../img/mockup-1.jpg) 50% 0 no-repeat fixed;
     margin: 0 auto;
     padding: 250px 0;
     background-size: cover;
 }
 
 #slide17 {
-    background: url(../img/slika1.jpg) 50% 0 no-repeat fixed;
+    background: url(../img/no1.jpg) 50% 0 no-repeat fixed;
     margin: 0 auto;
     background-size: cover;
 }
 
-#slide18 {
-    background: url(../img/slika2.jpg) 50% 0 no-repeat fixed;
-    margin: 0 auto;
-    background-size: cover;
-}
+
 
 
 /*= FOOTER 
