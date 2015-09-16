@@ -12,10 +12,14 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
+
 }
 
+body *{
+	 font-family: "Georgia";
+}
 h1 {
-    font-family: "Arvo";
+    
     font-weight: normal;
     font-size: 55px;
     text-align: center;
@@ -25,7 +29,7 @@ h1 {
 }
 
 h2 {
-    font-family: "Arvo";
+    
     font-weight: normal;
     font-size: 40px;
     text-align: center;
@@ -35,7 +39,7 @@ h2 {
 }
 
 h3 {
-    font-family: Oswald;
+    
     font-weight: normal;
     font-size: 16px;
     text-align: center;
@@ -62,7 +66,7 @@ a.lpanel {
     float: left;
     color: #e1e1e1;
     font-size: 12px;
-    font-family: "Wellfleet";
+    
     text-decoration: none;
     margin: 7px 11px;
 }
@@ -71,7 +75,7 @@ a.rpanel {
     float: right;
     color: #e1e1e1;
     font-size: 12px;
-    font-family: "Wellfleet";
+    
     text-decoration: none;
     margin: 7px 11px;
 }
@@ -109,7 +113,7 @@ a.rpanel:hover {
     font-size: 30px;
     margin-top: 20px;
     color: #fff;
-    font-family: "Wellfleet";
+    
     font-weight: bold;
 }
 
@@ -131,7 +135,7 @@ a.rpanel:hover {
     opacity: 0.6;
     font-size: 16px;
     text-decoration: none;
-    font-family: 'Wellfleet';
+    
 }
 
 #nav li a.active {
@@ -150,7 +154,7 @@ a.rpanel:hover {
 --------------------------------------------------------*/
 
 .quotes {
-    font-family: 'Goudy Bookletter 1911', serif;
+    
     font-weight: normal;
     font-size: 30px;
     text-align: left;
@@ -158,14 +162,14 @@ a.rpanel:hover {
 }
 
 .author_name_white {
-    font-family: "Wellfleet";
+    
     margin: 70px 0 0 75px;
     color: #fff;
     font-size: 20px;
 }
 
 .author_name_gray {
-    font-family: "Wellfleet";
+    
     margin: 70px 0 0 75px;
     color: #94a4a4;
     font-size: 20px;
@@ -176,13 +180,12 @@ a.rpanel:hover {
     margin: 0 auto;
 }
 
-#christmas_tree {
-    background: url('../img/christmas-tree.png')no-repeat;
-    width: 48px;
-    height: 77px;
-    margin: 0 auto;
+#logoTraka {
+    background: url('../img/logo.png')  50% 10% no-repeat;
+   	height: 250px;    
+	bottom: -35px;
+    background-size: cover;
     position: relative;
-    bottom: -35px;
 }
 
 #divider {
@@ -202,27 +205,6 @@ a.rpanel:hover {
     top: -38px;
 }
 
-#snowflakes1 {
-    background: url('../img/snowflakes.png')no-repeat;
-    width: 24px;
-    height: 21px;
-    margin: 0 auto;
-    display: block;
-    position: relative;
-    bottom: -54px;
-    left: -102px;
-}
-
-#snowflakes2 {
-    background: url('../img/snowflakes.png')no-repeat;
-    width: 24px;
-    height: 21px;
-    margin: 0 auto;
-    display: block;
-    position: relative;
-    bottom: -33px;
-    right: -100px;
-}
 
 
 /*= BUTTONS
@@ -263,12 +245,15 @@ ul.built {
 --------------------------------------------------------*/
 
 .slide {
-    padding: 15vh 0;
-    color: #fff;
+    padding: 15vh 0;   
 }
 
 .slide-img {
     height: 98vh;
+    color: #fff;
+}
+.slide-txt{
+	color: #333333;
 }
 
 #slide1,
@@ -277,8 +262,10 @@ ul.built {
 }
 
 #slide1 {
-    background: url('../img/slide1.jpg') 50% 0 no-repeat fixed;
+    background: url('../img/no1.jpg') 50% 0 no-repeat fixed;
+    /* background-color: #00af9b; */
     margin: 0;
+
     padding: 200px 0 260px 0;
     background-size: cover;
 }
@@ -288,18 +275,19 @@ ul.built {
     color: #333333;
     margin: 0 auto;
     overflow: hidden;
-    padding: 200px 0;
+    
+    padding: 7% 0;
+    height: 350px;
 }
 
 #slide3 {
-    background: url(../img/slide3.jpg) 50% 0 no-repeat fixed;
+    background: url(../img/mockup-1.jpg) 50% 0 no-repeat fixed;
     padding: 170px 0 0 0;
     background-size: cover;
 }
 
 #slide4 {
-    background-color: #fff;
-    color: #333333;
+    background-color: #fff; 
     padding: 200px 0;
 }
 
@@ -363,7 +351,7 @@ ul.built {
 
 #copyright {
     color: #fff;
-    font-family: "Wellfleet";
+    
     font-size: 14px;
     margin-top: 100px;
     text-align: center;
