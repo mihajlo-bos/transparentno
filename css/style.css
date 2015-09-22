@@ -109,6 +109,11 @@ a.rpanel:hover {
     margin-top: 20px;
 }
 
+#logo {
+    position: absolute;
+    margin-top: 0px;
+    
+}
 #logo a {
     color: #fff;
     text-decoration: none;
