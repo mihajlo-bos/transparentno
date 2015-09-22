@@ -54,6 +54,8 @@ h3 {
 }
 
 .content {
+    position: relative;
+    
     margin: 0 auto;
     width: 960px;
 }
@@ -159,7 +161,7 @@ a.rpanel:hover {
     font-weight: normal;
     font-size: 30px;
     text-align: left;
-    margin: 50px auto;
+    
 }
 
 .author_name_white {
@@ -278,7 +280,8 @@ ul.built {
     overflow: hidden;
     
     padding: 7% 0;
-    height: 350px;
+    height: 250px;
+    padding-top: 3.5%;
 }
 
 #slide3 {
@@ -288,10 +291,18 @@ ul.built {
 }
 
 #slide4 {
-    background-color: #fff; 
+    background-color: #00B09C; 
     padding: 200px 0;
+    color: white;
 }
-
+.krug{
+    width: 150px;
+    height: 150px;
+    background-color: orange;
+    border-radius: 75px;
+    position: absolute;
+    right: -3%;
+}
 #slide5 {
     background: url(../img/mockup-2.jpg) 50% 0 no-repeat fixed;
     margin: 0 auto;
