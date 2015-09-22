@@ -302,12 +302,18 @@ ul.built {
     color: white;
 }
 .krug{
-    width: 150px;
-    height: 150px;
-    background-color: orange;
-    border-radius: 75px;
+    cursor: pointer;
+    cursor: hand;   
+    box-shadow: 1px 5px 24px #888888; 
+    width: 180px;
+    height: 180px;
+    background-color: orange; /*  rgba(255, 165, 0, 0.48); */
+    border-radius: 90px;
     position: absolute;
     right: -3%;
+    padding-top: 65px;    
+    padding-left: 18px;
+    font-size: 16px;
 }
 #slide5 {
     background: url(../img/mockup-2.jpg) 50% 0 no-repeat fixed;
@@ -372,7 +378,7 @@ ul.built {
 
 
 #slide15 {
-    background: url(../img/mockup-1.jpg) 50% 0 no-repeat fixed;
+    background: url(../img/stupci.png) 50% 0 no-repeat fixed;
     margin: 0 auto;
     padding: 250px 0;
     background-size: cover;
