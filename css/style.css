@@ -403,6 +403,7 @@ ul.built {
     background: url(../img/no1.jpg) 50% 0 no-repeat fixed;
     margin: 0 auto;
     background-size: cover;
+    height: 100vh;
 }
 
 .sadrzaj-cont {
