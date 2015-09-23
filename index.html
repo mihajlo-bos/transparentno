@@ -10,6 +10,39 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="shortcut icon" href="css/logo16.jpg">
     <link rel="apple-touch-icon-precomposed" sizes="256x256" href="images/logo256.jpg">
+    <script src="js/jszip-utils.min.js"></script>  
+    <script src="js/docxtemplater-latest.min.js"></script>
+    <script src="js/FileSaver.min.js"></script>
+     <script>
+
+
+     //https://github.com/open-xml-templating/docxtemplater
+
+    function uradi (params) {
+        
+        params = params || {"opstinaSediste":"Sanja je car",
+            "trazenaInformacija":"Ovde upisem nesto",
+            "danIMesec":"23.09.",
+            "g":"5"
+            };
+
+        loadFile("docs/template1.docx",function(err,content){
+        if (err) { throw e};
+        doc=new Docxgen(content);
+        doc.setData( 
+            params
+        ) //set the templateVariables
+        doc.render()    
+        out=doc.getZip().generate({type:"blob"}) //Output the document using Data-URI
+        saveAs(out,"zahtev.docx")
+    })
+    }
+    var loadFile=function(url,callback){
+        JSZipUtils.getBinaryContent(url,callback);
+    }
+    
+    </script>
+
     <script>
     $(document).ready(function() { 
         $('a[href*=#]').each(function() {  
@@ -208,7 +241,10 @@
     </div>
     <div id="slide17" class="slide slide-img">
         <div class="content">
-            Još uvek nedefinisana slika koja bi ilustrovala stranicu o zahtevima. Ili samo dugme, podnesite zahtev koji vodi na pomenutu stranu (koja je opisana u nekom od ranijih dokumenata)
+         <p>  Prema Zakonu o slobodnom pristupu informacijama od javnog značaja, imate pravo da zatražite informaciju od javnog značaja od organa javne vlasti, u ovom slučaju od bilo koje opštine. Vaše pravo možete ostvariti tako što ćete podneti zahtev za slobodan pristup informacijama od javnog značaja. U nastavku možete pogledati i preuzeti obrazac zahteva, kao i potrebne podatke za slanje zahteva poštom. </p>
+
+           <img src="./img/zahtev.png" alt="">
+           <button onclick="uradi()">Pošaljite zahtev</button>
         </div>
     </div>
     <footer id="footer">

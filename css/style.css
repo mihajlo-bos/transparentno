@@ -380,6 +380,23 @@ ul.built {
     background-size: cover;
 }
 
+#slide17 button{
+    font-size: 20px;
+    color:black;
+    display: block;
+    margin-left: 35%;
+    margin-top: 15px;
+}
+
+#slide17 p {
+    font-size: 16px;
+}
+
+#slide17 img{
+    height: 60vh;
+    margin-left: 15%;
+}
+
 
 /*= FOOTER 
 --------------------------------------------------------*/
