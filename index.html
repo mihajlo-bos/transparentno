@@ -5,44 +5,76 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Local Transparency Booster | LTB</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/awesomplete.css">
     <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="shortcut icon" href="css/logo16.jpg">
     <link rel="apple-touch-icon-precomposed" sizes="256x256" href="images/logo256.jpg">
-    <script src="js/jszip-utils.min.js"></script>  
+    <script src="js/jszip-utils.min.js"></script>
     <script src="js/docxtemplater-latest.min.js"></script>
     <script src="js/FileSaver.min.js"></script>
-     <script>
+    <script src="js/awesomplete.min.js"></script>
+    <script>
+    var podaci;
+    var lista;
 
+    var izabrani; // na osnovu kojeg se generise sve
 
-     //https://github.com/open-xml-templating/docxtemplater
+    var dokumenta = {
+        "informator": "Informator o radu",
+        "statut": "Statut",
+        "budzet": "Odluka o budžetu",
+        "budzetizvestaj": "Izveštaj o izvršenju budžeta",
+        "nabavke": "Plan javnih nabavki",
+        "nabavkeizvestaj": "Izveštaj o javnim nabavkama",
+        "finansijskiizvestaj": "Finansijski izveštaj",
+        "driizvestaj": "Izveštaj Državne revizorske institucije",
+        "urbanistickiplan": "Prostorni plan",
+        "mladiplan": "Lokalni akcioni plan za mlade",
+        "slor": "Strategija lokalnog održivog razvoja",
+        "leap": "Lokalni ekološki akcioni plan",
+        "sler": "Strategija lokalnog ekonomskog razvoja"
+    };
 
-    function uradi (params) {
+    //https://github.com/open-xml-templating/docxtemplater
+
+    function uradi(params) {
+        //izabrani + vrednost select boxa
         
-        params = params || {"opstinaSediste":"Sanja je car",
-            "trazenaInformacija":"Ovde upisem nesto",
-            "danIMesec":"23.09.",
-            "g":"5"
+        var tempString = izabrani.opstina + ", " + izabrani.adresa + ", " + izabrani.telefon;
+
+        var dateObj = new Date();
+        var month = dateObj.getUTCMonth() + 1; //months from 1-12
+        var day = dateObj.getUTCDate();
+        var year = dateObj.getUTCFullYear();
+
+        params = params || {
+            "opstinaSediste": tempString,
+            "trazenaInformacija": $("#dokSelect").val(),
+            "danIMesec": day + "."+month+".",
+            "g": (year+"").slice(-1)
+        };
+
+        loadFile("docs/template1.docx", function(err, content) {
+            if (err) {
+                throw e
             };
-
-        loadFile("docs/template1.docx",function(err,content){
-        if (err) { throw e};
-        doc=new Docxgen(content);
-        doc.setData( 
-            params
-        ) //set the templateVariables
-        doc.render()    
-        out=doc.getZip().generate({type:"blob"}) //Output the document using Data-URI
-        saveAs(out,"zahtev.docx")
-    })
+            doc = new Docxgen(content);
+            doc.setData(
+                    params
+                ) //set the templateVariables
+            doc.render()
+            out = doc.getZip().generate({
+                    type: "blob"
+                }) //Output the document using Data-URI
+            saveAs(out, "zahtev.docx")
+        })
     }
-    var loadFile=function(url,callback){
-        JSZipUtils.getBinaryContent(url,callback);
+    var loadFile = function(url, callback) {
+        JSZipUtils.getBinaryContent(url, callback);
     }
-    
     </script>
-
     <script>
     $(document).ready(function() { 
         $('a[href*=#]').each(function() {  
@@ -229,7 +261,7 @@
     </div>
     <div id="slide15" class="slide slide-img">
         <div class="content">
-         <a target="_blank" href="http://test.bos.rs/pages/stupci.html">
+            <a target="_blank" href="http://test.bos.rs/pages/stupci.html">
                 <div class="krug"> Pogledajte bazu lokalne transparentnosti</div>
             </a>
         </div>
@@ -241,10 +273,18 @@
     </div>
     <div id="slide17" class="slide slide-img">
         <div class="content">
-         <p>  Prema Zakonu o slobodnom pristupu informacijama od javnog značaja, imate pravo da zatražite informaciju od javnog značaja od organa javne vlasti, u ovom slučaju od bilo koje opštine. Vaše pravo možete ostvariti tako što ćete podneti zahtev za slobodan pristup informacijama od javnog značaja. U nastavku možete pogledati i preuzeti obrazac zahteva, kao i potrebne podatke za slanje zahteva poštom. </p>
-
-           <img src="./img/zahtev1.png" alt="">
-           <button onclick="uradi()">Pošaljite zahtev</button>
+            <p> Prema Zakonu o slobodnom pristupu informacijama od javnog značaja, imate pravo da zatražite informaciju od javnog značaja od organa javne vlasti, u ovom slučaju od bilo koje opštine. Vaše pravo možete ostvariti tako što ćete podneti zahtev za slobodan pristup informacijama od javnog značaja. U nastavku možete pogledati i preuzeti obrazac zahteva, kao i potrebne podatke za slanje zahteva poštom. </p>
+            <div>
+                <span>Opština
+                    <input type="text" id="opstinaInput" name="opstina">
+                </span>
+                <br>
+                <span id="dokSpan" class="hidden">Dokument
+                    <select name="dokument" id="dokSelect" ></select>
+                </span>
+            </div>
+            <img src="./img/zahtev1.png" alt="">
+            <button id="zahtevBtn" class="hidden" onclick="uradi()">Preuzmite zahtev</button>
         </div>
     </div>
     <footer id="footer">
@@ -269,7 +309,65 @@
         </div>
     </footer>
     <script>
-    //treba setovati
+    //https://leaverou.github.io/awesomplete/#download
+
+    $.getJSON("resources/podaci.json")
+        .done(function(data) {
+            podaci = (data);
+
+            lista = podaci.map(function(el) {
+                    return el.opstina; //.toLowerCase();
+                })
+                //lista = JSON.parse(JSON.stringify(lista)); 
+
+            var input = document.getElementById("opstinaInput");
+            new Awesomplete(input, {
+                list: lista
+            })
+
+            $("#opstinaInput").on("awesomplete-select", function(ev) {
+
+
+                $("#dokSpan").removeClass('hidden');
+                //ovde mi trebaju dokumenta koje imaju jedinice
+                var unos = ev.originalEvent.text.toLowerCase();
+                var opstinaParams = podaci.filter(function(el) {
+                    return el.opstina.toLowerCase() == unos;
+                })
+
+                opstinaParams = opstinaParams[0];
+                izabrani = opstinaParams;
+
+                //filter te jedne opstine u potrazi za parametrima
+                var nazivi = Object.keys(dokumenta);
+                var interesantni = [];
+
+                for (var i = 0, len = nazivi.length; i < len; i++) {
+                    if (opstinaParams[nazivi[i]] <= 1)
+                        interesantni.push(dokumenta[nazivi[i]]);
+                }
+                //console.log(interesantni);
+                //padajuci meni od tih dokumenata
+
+                var select = document.getElementById("dokSelect");
+
+                var options = interesantni;
+
+                $(select.childNodes).remove()
+
+                for (var i = 0; i < options.length; i++) {
+                    var opt = options[i];
+                    var el = document.createElement("option");
+                    el.textContent = opt;
+                    el.value = opt;
+                    select.appendChild(el);
+                };
+
+                $("#zahtevBtn").removeClass('hidden');
+
+            });
+
+        })
     </script>
 </body>
 
