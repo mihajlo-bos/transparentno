@@ -4,11 +4,13 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Local Transparency Booster | LTB</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/awesomplete.css">
     <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/awesomplete.css">
+    <link rel="stylesheet" href="css/style.css" />
+    
     <link rel="shortcut icon" href="css/logo16.jpg">
     <link rel="apple-touch-icon-precomposed" sizes="256x256" href="images/logo256.jpg">
     <script src="js/jszip-utils.min.js"></script>
@@ -41,7 +43,7 @@
 
     function uradi(params) {
         //izabrani + vrednost select boxa
-        
+
         var tempString = izabrani.opstina + ", " + izabrani.adresa + ", " + izabrani.telefon;
 
         var dateObj = new Date();
@@ -52,8 +54,8 @@
         params = params || {
             "opstinaSediste": tempString,
             "trazenaInformacija": $("#dokSelect").val(),
-            "danIMesec": day + "."+month+".",
-            "g": (year+"").slice(-1)
+            "danIMesec": day + "." + month + ".",
+            "g": (year + "").slice(-1)
         };
 
         loadFile("docs/template1.docx", function(err, content) {
@@ -88,7 +90,7 @@
 
                          
                     $(this).click(function() {
-                        $("#nav li a").removeClass("active");
+                        $(".nav li a").removeClass("active");
                         $(this).addClass('active');      
                         $('html, body').animate({
                             scrollTop: targetOffset
@@ -104,25 +106,61 @@
 </head>
 
 <body>
-    <header id="header">
-        <div class="content">
-            <div id="logo">
-                <a href="index.html#top">
-                    <img src="css/logo48.png" alt="">
-                </a>
+    <header id="header" role="banner">
+        <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                 <a class="navbar-brand" href="index.html#slide1" style="height:80px;"><img src="css/logo48.png" alt=""></a>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav ">
+                        
+                        <li>Proverite:</li>
+                        <li><a href="index.html#slide3" class="active" title="Next Section"> Informator</a></li>
+                        <li><a href="index.html#slide7" title="Next Section">Budžet</a></li>
+                        <li><a href="index.html#slide9" title="Next Section">Javne nabavke, državna pomoć</a></li>
+                        <li><a href="index.html#slide13" title="Next Section">Usluge</a></li>
+
+                        <li><a href="index.html#slide17" title="Next Section">Zahtev za informacije</a></li>
+                        
+                        <li class="dropdown ">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Dijagrami </a>
+                            <ul class="dropdown-menu">
+                                <li><a target="_blank" href="http://test.bos.rs/pages/dokumenta.html">Analiza informatora</a>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li><a target="_blank" href="http://test.bos.rs/pages/budzet.html">Informacije o budžetu</a>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li><a target="_blank" href="http://test.bos.rs/pages/nabavke.html">Informacije o javnim nabavkama</a>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li><a target="_blank" href="http://test.bos.rs/pages/pomoc.html">Informacije o državnoj  pomoći</a>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li><a target="_blank" href="http://test.bos.rs/pages/usluge.html">Informacije o uslugama</a>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                 <li><a target="_blank" href="http://test.bos.rs/pages/stupci.html">Baza lokalne transparentnosti</a>
+                                </li>
+                            </ul>
+
+                        </li>
+                        <li><a href="about.html" title="Next Section">O projektu</a></li>
+                       
+                    </ul>
+                </div>
             </div>
-            <nav id="nav">
-                <ul>
-                    <li>Proverite:</li>
-                    <li><a href="#slide3" class="active" title="Next Section"> Informator</a></li>
-                    <li><a href="#slide7" title="Next Section">Budžet</a></li>
-                    <li><a href="#slide9" title="Next Section">Javne nabavke, državna pomoć</a></li>
-                    <li><a href="#slide13" title="Next Section">Usluge</a></li>
-                    <li><a href="about.html" title="Next Section">O projektu</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
+
     <div id="slide1" class="slide slide-img">
         <div id="logoTraka"> </div>
     </div>
@@ -137,7 +175,7 @@
     </div>
     <div id="slide3" class="slide slide-img">
         <div class="content">
-            <a target="_blank" href="">
+            <a target="_blank" href="http://test.bos.rs/pages/dokumenta.html">
                 <div class="krug"> Pregled opštinskih informatora o radu </div>
             </a>
         </div>
@@ -275,15 +313,14 @@
         <div class="content">
             <p> Prema Zakonu o slobodnom pristupu informacijama od javnog značaja, imate pravo da zatražite informaciju od javnog značaja od organa javne vlasti, u ovom slučaju od bilo koje opštine. Vaše pravo možete ostvariti tako što ćete podneti zahtev za slobodan pristup informacijama od javnog značaja. U nastavku možete pogledati i preuzeti obrazac zahteva, kao i potrebne podatke za slanje zahteva poštom. </p>
             <div>
-                <span>Opština
-                    <input type="text" id="opstinaInput" name="opstina">
-                </span>
+                <span>Opština</span> 
+                <input type="text" id="opstinaInput" name="opstina">
                 <br>
-                <span id="dokSpan" class="hidden">Dokument
-                    <select name="dokument" id="dokSelect" ></select>
-                </span>
+                <span id="dokSpan" class="hidden">Dokument</span>
+                <select  name="dokument" id="dokSelect" class="hidden"></select>
             </div>
-            <img src="./img/zahtev1.png" alt="">
+            <div class="zahtevSlika"></div>
+            <!-- <img src="./img/zahtev.jpg" alt=""> -->
             <button id="zahtevBtn" class="hidden" onclick="uradi()">Preuzmite zahtev</button>
         </div>
     </div>
@@ -325,10 +362,14 @@
                 list: lista
             })
 
+            //window.location.search.replace("?", ""); //prosledjeni parametri
+
             $("#opstinaInput").on("awesomplete-select", function(ev) {
 
 
                 $("#dokSpan").removeClass('hidden');
+                $("#dokSelect").removeClass('hidden');
+                
                 //ovde mi trebaju dokumenta koje imaju jedinice
                 var unos = ev.originalEvent.text.toLowerCase();
                 var opstinaParams = podaci.filter(function(el) {

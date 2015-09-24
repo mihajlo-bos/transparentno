@@ -88,13 +88,45 @@ a.rpanel:hover {
 /*= HEADER & NAVIGATION
 --------------------------------------------------------*/
 
-#header {
+
+/* */
+
+
+/* #header , */
+
+#navbar {
     width: 100%;
-    background: url('../img/header-bg.png');
-    height: 80px;
+    /* background: url('../img/header-bg.png'); */
+    background-color: rgba(0, 0, 0, 0.72);
+    height: 70px;
     position: fixed;
     margin-top: 5px;
     z-index: 100;
+    border-color: rgba(44, 41, 38, 0);
+    /* override bootstrapa */
+}
+
+@media screen and (max-width: 768px) {
+    #navbar > .container {
+        background-color: rgba(0, 0, 0, 0.72);
+    }
+    #navbar {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    .navbar-toggle {
+        margin-top: 20px;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+        color: #fff;
+        opacity: 0.6;
+        font-size: 16px;
+        text-decoration: none;
+        padding-top: 20px;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
+        color: #fff;
+        opacity: 1;
+    }
 }
 
 #nav {
@@ -131,20 +163,41 @@ a.rpanel:hover {
     padding-left: 21px;
 }
 
-#nav li a {
+#navbar > div > div.collapse.navbar-collapse > ul > li:nth-child(1) {
+    color: #fff;
+    opacity: 1;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 20px;
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+        color: white;
+    background-color: transparent;
+}
+
+
+/* #nav li a, */
+
+.navbar-brand {
+    margin-top: -5px
+}
+
+.navbar-default .navbar-nav>li>a {
     color: #fff;
     opacity: 0.6;
     font-size: 16px;
     text-decoration: none;
+    padding-top: 20px;
 }
 
-#nav li a.active {
+.navbar-default .navbar-nav>li>a.active {
     color: #fff;
     opacity: 1;
     border-bottom: 2px solid #fff;
 }
 
-#nav li a:hover {
+.navbar-default .navbar-nav>li>a:hover {
     color: #fff;
     opacity: 1;
 }
@@ -368,36 +421,52 @@ ul.built {
 }
 
 #slide15 {
-    background: url(../img/stupci.png) 50% 0 no-repeat fixed;
+    background: url(../img/monitor.jpg) 50% 0 no-repeat fixed;
     margin: 0 auto;
     padding: 250px 0;
     background-size: cover;
 }
 
 #slide17 {
-    background: url(../img/no1.jpg) 50% 0 no-repeat fixed;
+   background: url(../img/zahtev.jpg) 50% 86% no-repeat fixed;
     margin: 0 auto;
-    background-size: cover;
-    color:black;
+    background-size: 86%;
+    color: black;
+    background-color: #10B29B;
 }
 
-#slide17 button{
+/* .zahtevSlika{
+  background: url(../img/zahtev.jpg) 50% 0 no-repeat;
+    margin: 0 auto;
+        height: 60vh;
+    background-size: cover;
+} */
+
+#slide17 button {
     font-size: 20px;
-    
-    display: block;
-    margin-left: 35%;
+    display: block;    
     margin-top: 15px;
 }
-#slide17 input{
-    color:black;
+
+#slide17 input {
+    color: black;
+}
+
+#slide17 div>span {
+    color: white;
 }
 
 #slide17 p {
-    color:white;
-    font-size: 16px;
+    color: white;
+    font-size: 16px;    
+    width: 40%;
+    margin-top: 10%;
+}
+#slide17 .content{
+    margin-left: 5%;
 }
 
-#slide17 img{
+#slide17 img {
     height: 60vh;
     margin-left: 15%;
 }
