@@ -171,8 +171,9 @@ a.rpanel:hover {
     padding: 20px;
 }
 
-.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
-        color: white;
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>li>a:hover {
+    color: white;
     background-color: transparent;
 }
 
@@ -429,12 +430,13 @@ ul.built {
 }
 
 #slide17 {
-   background: url(../img/zahtev.jpg) 50% 86% no-repeat fixed;
+    background: url(../img/zahtev.jpg) 50% 86% no-repeat fixed;
     margin: 0 auto;
     background-size: 86%;
     color: black;
     background-color: #10B29B;
 }
+
 
 /* .zahtevSlika{
   background: url(../img/zahtev.jpg) 50% 0 no-repeat;
@@ -445,7 +447,7 @@ ul.built {
 
 #slide17 button {
     font-size: 20px;
-    display: block;    
+    display: block;
     margin-top: 15px;
 }
 
@@ -459,11 +461,12 @@ ul.built {
 
 #slide17 p {
     color: white;
-    font-size: 16px;    
+    font-size: 16px;
     width: 40%;
     margin-top: 10%;
 }
-#slide17 .content{
+
+#slide17 .content {
     margin-left: 5%;
 }
 
@@ -509,4 +512,9 @@ ul.built {
 .sadrzaj-cont > p {
     color: white;
     font-size: 16px;
+}
+
+#footer .row {
+    padding-top: 50px;
+    padding-bottom: 40px;
 }
