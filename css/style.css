@@ -343,7 +343,7 @@ ul.built {
 .krug {
     cursor: pointer;
     cursor: hand;
-    box-shadow: 1px 5px 24px #888888;
+    /* box-shadow: 1px 5px 24px #888888; */
     width: 180px;
     height: 180px;
     background-color: orange;
