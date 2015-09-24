@@ -424,7 +424,8 @@ ul.built {
     background: url(../img/monitor.jpg) 50% 0 no-repeat fixed;
     margin: 0 auto;
     padding: 250px 0;
-    background-size: cover;
+    background-size: 80%;
+    background-color: #F26726;
 }
 
 #slide17 {
