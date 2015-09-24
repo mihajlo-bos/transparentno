@@ -518,3 +518,15 @@ ul.built {
     padding-top: 50px;
     padding-bottom: 40px;
 }
+
+.sredina{
+        display: inline;
+    position: absolute;
+    margin: auto;
+    margin-top: 30px;
+    padding-left: 60px;
+}
+.txtEu{
+        margin-top: 33px;
+    font-size: 13px;
+}
